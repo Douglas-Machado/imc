@@ -80,3 +80,9 @@ form button:hover {
   padding: 10px 0 10px 10px;
   display: none;
 }
+
+@media screen and (max-width:768px){
+  .box-right p{
+    margin-bottom: 33px;
+  }
+}
