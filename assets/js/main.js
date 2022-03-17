@@ -3,6 +3,10 @@ var result = document.getElementById("result");
 
 function getImc (weight, height){
   let value = (weight.value / Math.pow(height.value, 2));
+  if(isNaN(value)){
+    alert("Insira um número")
+    location.reload();
+  }
   return(value)
 }
 
