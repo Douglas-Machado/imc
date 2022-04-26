@@ -1,0 +1,10 @@
+header{
+  background-color: #FF8C32;
+  padding: 8px 0;
+  text-align: center;
+}
+
+header h1{
+  color: #EEEEEE;
+  font-weight: 700;
+}
