@@ -1,11 +1,13 @@
-# Cáculo IMC
+# Cáculo IMC 
 
 ## Projeto desenvolvido para estudo JS para receber dados de peso e altura e calcular IMC do usuário
 
+## Nova versão com o framework React.js
+
 ### Usando a calculadora de IMC
 
-* Após clonar o repositório, basta abrir o arquivo index.html e insrir os dados necessários para o cálculo IMC
+* Baixe os paacotes utilizando `npm install`
 
-* Peso(Kg)
-* Altura(M)
+* Use o comando `npm run dev` para abrir o servidor local
 
+* Acesse http://localhost:3000
