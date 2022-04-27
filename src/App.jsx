@@ -6,7 +6,6 @@ function App() {
   return (
     <section className="container">
       <div className="description-title">
-        <h1>Níveis de obesidade</h1>
       </div>
       <table cellSpacing="0">
         <thead>

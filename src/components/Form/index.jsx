@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Result } from "./result/result"; 
 
 import './form.css'
 
@@ -32,33 +33,30 @@ export default class Form extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { weight, height } = this.state
-    const h3 = document.querySelector('h3')
 
     if(isNaN(weight) || isNaN(height)) {
-      alert('insira m valor válido')
-    }
-    
-    if(weight < height){
-      h3.innerHTML = 'Porque sua Altura e maior que seu peso? Valor invalido! Digite novamente!'
-      h3.style.display = 'block'
-      h3.style.backgroundColor = 'rgb(230, 122, 145)'
+      alert('insira um valor válido')
+      return;
+    }else if(weight <= height){
+      alert('insira um valor válido')
       return;
     }
 
-    
-    let result = ((weight / Math.pow(height, 2)))
+    let result = (weight / Math.pow(height, 2)).toFixed(2)
 
-    h3.innerHTML = result.toFixed(2)
-    h3.style.display = 'block'
+    this.setState({
+      imc: result
+    })
   };
 
   render(){
+    const { imc } = this.state
   return(
     <form action='#' onSubmit={this.handleSubmit}>
         <h1>Calcule seu IMC</h1>
         <input
         type="number"
-        placeholder="peso" 
+        placeholder="peso(Kg)" 
         onChange={e => this.handleChangeWeight(e.target.value)}
         required
         min="1"
@@ -67,7 +65,7 @@ export default class Form extends Component {
 
         <input
         type='number'
-        placeholder="altura" 
+        placeholder="altura(m)"
         onChange={e => this.handleChangeHeight(e.target.value)}
         required
         min="1"
@@ -76,7 +74,9 @@ export default class Form extends Component {
 
         <button type="submit">Calcular</button>
 
-        <h3></h3>
+        <Result
+        imc={imc}
+        />
       </form>
   );
   }

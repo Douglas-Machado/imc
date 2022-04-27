@@ -50,12 +50,3 @@ form button {
 form button:hover {
   background: #FF8C32;
 }
-
-h3{
-  display: none;
-  margin-top: 0.5rem;
-  background-color: lightgreen;
-  padding: 16px;
-  border-radius: 8px;
-  width: 50%;
-}
